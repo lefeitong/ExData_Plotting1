@@ -1,0 +1,10 @@
+data <- read.table("C:/Users/Lefei/Downloads/exdata-data-household_power_consumption/household_power_consumption.txt",sep=";",header=TRUE)
+firstDate<-as.Date("2007-02-01","%Y-%m-%d")
+secondDate<-as.Date("2007-02-02","%Y-%m-%d")
+d<-data
+d[,1]<-as.Date(d[,1],"%d/%m/%Y")
+d1<-subset(d,Date==firstDate|Date==secondDate)
+d1[,3]<-as.numeric(as.character(d1[,3]))
+png(filename = "plot1.png",width = 480, height = 480)
+hist(d1[,3],col="red",main="Global Active Power",xlab="Global Active Power (Kilowatts)")
+dev.off()
