@@ -1,5 +1,4 @@
-data <- read.table("C:/Users/Lefei/Downloads/exdata-data-household_power_consumption/
-                   household_power_consumption.txt",sep=";",header=TRUE)
+data <- read.table("C:/Users/Lefei/Downloads/exdata-data-household_power_consumption/household_power_consumption.txt",sep=";",header=TRUE)
 firstDate<-as.Date("2007-02-01","%Y-%m-%d")
 secondDate<-as.Date("2007-02-02","%Y-%m-%d")
 data[,1]<-as.Date(data[,1],"%d/%m/%Y")
